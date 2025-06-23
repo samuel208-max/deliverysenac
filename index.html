@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delivery Senac</title>
 </head>
+
 <body>
     <h1>Delivery Senac</h1>
     <script>
+        let pizzas = parseInt(prompt("Digite quantas pizzas serão adicionadas"))
+
         let pizza1 = {
             nome: 'calabresa',
             ingredientes: ['calabresa', 'cebola', 'mussarela'],
@@ -26,6 +30,49 @@
         cardapio.forEach((pizza) => {
             console.log(`${pizza.nome} valor: ${pizza.valor.toFixed(2)}`)
         })
+
+        let pizza3 = {
+            nome: 'Mussarela',
+            ingredientes: ['Molho', 'mussarela'],
+            valor: 35.00
+        };
+
+        let pizza4 = {
+            nome: 'Portuguesa',
+            ingredientes: ['Ovo', 'Presunto', 'mussarela', 'molho'],
+            valor: 50.00
+        };
+
+        let pizza5 = {
+            nome: 'bacon',
+            ingredientes: ['bacon', 'mussarela', 'Molho'],
+            valor: 35.00
+        };
+
+        let pizza6 = {
+            nome: 'Marguerita',
+            ingredientes: ['Molho', 'Manjericão', 'mussarela', 'tomate'],
+            valor: 40.00
+        };
+
+        let pizza7 = {
+            nome: 'Pepperoni',
+            ingredientes: ['Pepperoni', 'mussarela'],
+            valor: 50.00
+        };
+
+        let pizza8 = {
+            nome: 'Atum',
+            ingredientes: ['Atum', 'mussarela'],
+            valor: 35.00
+        };
+
+        let pizza9 = {
+            nome: 'Brigadeiro',
+            ingredientes: ['creme de chocolate', 'brigadeiro'],
+            valor: 35.00
+        };
     </script>
 </body>
+
 </html>
