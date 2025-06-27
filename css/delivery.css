@@ -60,6 +60,7 @@ body {
 .checkout {
     position: relative;
     display: none;
+    /*oculto */
     position: fixed;
     right: 0;
     top: 0;
@@ -73,8 +74,8 @@ body {
 
 #fecharCarrinho {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 20px;
+    right: 20px;
     background-color: transparent;
     border: none;
     font-size: 1.5em;
@@ -88,10 +89,11 @@ body {
     padding: 5px 10px;
     border-radius: 5px;
     cursor: pointer;
-    margin-left: 10px;
+    margin-left: 20px;
 }
 
 .total {
+    
     text-align: right;
     font-weight: bold;
     font-size: 1.5em;
@@ -112,9 +114,12 @@ body {
     justify-content: space-around;
     list-style: none;
     gap: 20px
-};
+}
 
-.item_carinho {
+;
+
+.item_carrinho {
+    margin-top: 20px;
     display: flex;
     justify-content: space-between;
     padding: 5px 0;
