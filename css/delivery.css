@@ -16,24 +16,36 @@ body {
     color: #555;
 }
 
+.logo a {
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+
 #cardapio {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
+    gap: 20px;
+    padding: 1rem;
 }
 
 #cardapio li {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    /*Adicionado*/
     border: 1px solid #ddd;
     padding: 10px;
     border-radius: 8px;
     background-color: #f9f9f9;
     list-style: none;
     font-size: 1.2em;
-    margin: 10px 0;
     width: 100%;
     max-width: 300px;
+    /*Alterei. era 300px*/
+    overflow: hidden;
+    /*Adicionado*/
 }
 
 #cardapio li img {
@@ -41,6 +53,10 @@ body {
     max-width: 300px;
     height: auto;
     border-radius: 8px;
+    max-height: 180px;
+    /*Adicionado*/
+    object-fit: cover;
+    /*Adicionado*/
 }
 
 #cardapio li button {
@@ -51,6 +67,8 @@ body {
     border-radius: 5px;
     cursor: pointer;
     margin-top: 10px;
+    width: 100%;
+    /*Adicionado*/
 }
 
 #carrinho {
@@ -60,7 +78,7 @@ body {
 .checkout {
     position: relative;
     display: none;
-    /*oculto */
+    /*oculto*/
     position: fixed;
     right: 0;
     top: 0;
@@ -74,8 +92,8 @@ body {
 
 #fecharCarrinho {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 10px;
+    right: 10px;
     background-color: transparent;
     border: none;
     font-size: 1.5em;
@@ -89,11 +107,10 @@ body {
     padding: 5px 10px;
     border-radius: 5px;
     cursor: pointer;
-    margin-left: 20px;
+    margin-left: 10px;
 }
 
 .total {
-    
     text-align: right;
     font-weight: bold;
     font-size: 1.5em;
@@ -104,7 +121,7 @@ body {
     width: 100%;
     padding: 1rem;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     background-color: #f0f0f0;
 }
@@ -112,14 +129,12 @@ body {
 .navegacao ul {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     list-style: none;
-    gap: 20px
+    gap: 20px;
 }
 
-;
-
 .item_carrinho {
-    margin-top: 20px;
     display: flex;
     justify-content: space-between;
     padding: 5px 0;
@@ -127,6 +142,7 @@ body {
 }
 
 .navegacao ul li a {
+    font-weight: bold;
     text-decoration: none;
     color: #333;
 }
@@ -135,5 +151,93 @@ body {
     background: transparent;
     font-size: 1.2rem;
     border: none;
+    font-weight: bold;
+    color: #333;
+}
+
+@media screen and (max-width: 425px) {
+    #cardapio {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .checkout {
+        width: 100%;
+        height: auto;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: auto;
+    }
+
+    .navegacao ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #cardapio li {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+/* BotÃµes finalizar pedido */
+.acoes {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+
+#finalizarPedido,
+#limparCarrinho {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
     cursor: pointer;
+}
+
+#limparCarrinho {
+    background-color: #dc3545;
+}
+
+#finalizarPedido:hover,
+#limparCarrinho:hover {
+    opacity: 0.8;
+}
+
+/* Animar checkout do carrinho */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+}
+
+.checkout {
+    animation: slideIn 0.7s forwards;
+}
+
+.checkout.hide {
+    animation: slideOut 0.7s forwards;
+    display: none;
 }
