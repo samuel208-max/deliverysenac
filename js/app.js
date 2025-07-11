@@ -45,6 +45,7 @@ btnAbrirCarrinho.addEventListener('click', () => {
     //altera o display da div para block
     checkout.style.display = 'block';
 });
+
 // ===================EVENTO FECHAR CARRINHO==================
 
 const fecharCarrinho = document.getElementById('fecharCarrinho');
